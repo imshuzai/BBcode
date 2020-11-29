@@ -4,6 +4,8 @@
 
 A [Flarum](http://flarum.org) extension. More BBcodes to Flarum
 
+Original project from Zerosonesfun
+
 ### Installation
 
 Use [Bazaar](https://discuss.flarum.org/d/5151-flagrow-bazaar-the-extension-marketplace) or install manually with composer:

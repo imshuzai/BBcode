@@ -1,0 +1,27 @@
+.bbspoiler-blur {
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.75), 0 0 12px rgba(0, 0, 0, 0.75);
+    transition: all 2s ease-in-out;
+    color: #000;
+    color: rgba(0, 0, 0, 0);
+    padding-left: 5px;
+}
+
+.bbspoiler-blur:hover {
+    text-shadow: none;
+    color: #000;
+    cursor: help;
+    padding-left: 0;
+}
+/* Blurred spoiler in dark mode */
+.dark .bbspoiler-blur {
+    text-shadow: 0 0 12px rgba(255,255,255,1.0), 0 0 12px rgba(255,255,255,1.0);
+    transition: all 2s ease-in-out;
+    padding-left: 5px;
+}
+
+.dark .bbspoiler-blur:hover {
+    text-shadow: none;
+    color: #fff;
+    cursor: help;
+    padding-left: 0;
+}

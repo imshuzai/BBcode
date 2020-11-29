@@ -1,0 +1,7 @@
+summary:focus {
+    outline: none;
+}
+
+details {
+    cursor: pointer;
+}
