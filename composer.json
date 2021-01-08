@@ -1,14 +1,21 @@
 {
   "name": "cadiducho/bbcode",
-  "description": "More BBcodes to Flarum",
+  "description": "Edoras Formatting - BBCodes",
   "keywords": [
     "flarum"
   ],
   "type": "flarum-extension",
   "license": "MIT",
   "require": {
-    "flarum/core": "^0.1.0-beta.14"
+    "flarum/core": "^0.1.0-beta.15",
+    "fof/components": ">=0.2.0"
   },
+  "support": {
+    "issues": "https://github.com/EdorasMinecraft/BBcode/issues",
+    "source": "https://github.com/EdorasMinecraft/BBcode",
+    "forum": "https://foro.edoras.es"
+  },
+  "homepage": "https://edoras.es",
   "authors": [
     {
       "name": "Cadiducho",
@@ -18,20 +25,17 @@
   ],
   "autoload": {
     "psr-4": {
-      "Cadiducho\\Bbcode\\": "src/"
+      "Cadiducho\\BBCode\\": "src/"
     }
   },
   "extra": {
     "flarum-extension": {
-      "title": "Edoras More BBCode",
+      "title": "Edoras Formatting - BBCode",
       "icon": {
-        "name": "fas fa-bold",
-        "backgroundColor": "#ddd",
+        "name": "fas fa-font",
+        "backgroundColor": "#dedede",
         "color": "#000"
       }
-    },
-    "flagrow": {
-      "discuss": ""
     }
   }
 }

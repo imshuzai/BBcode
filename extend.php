@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Cadiducho\Bbcode;
+namespace Cadiducho\BBCode;
 
 use Flarum\Extend;
-use Flarum\Frontend\Document;
+use FoF\Components\Extend\AddFofComponents;
 use s9e\TextFormatter\Configurator;
 
 function accordion(Configurator $config)
 {
     $config->BBCodes->addCustom(
-            '[accordion header="{TEXT4}"]{TEXT5}[/accordion]',
-            '<div class="accordion">
+        '[accordion header="{TEXT4}"]{TEXT5}[/accordion]',
+        '<div class="accordion">
                                  <input type="checkbox" name="radacc" class="accordion-chk" />
                                  <h3 class="accordion-header Button--primary">
                                      {TEXT4}
@@ -37,8 +37,8 @@ function accordion(Configurator $config)
 function blur(Configurator $config)
 {
     $config->BBCodes->addCustom(
-            '[blur]{ANYTHING4}[/blur]',
-            '<p class="bbspoiler-blur">
+        '[blur]{ANYTHING4}[/blur]',
+        '<p class="bbspoiler-blur">
                             {ANYTHING4}
                             </p>'
     );
@@ -47,56 +47,56 @@ function blur(Configurator $config)
 function chat(Configurator $config)
 {
     $config->BBCodes->addCustom(
-            '[chat-a="{TEXT27}" who="{TEXT26}"]',
-            '<p class="chat-a Button">
+        '[chat-a="{TEXT27}" who="{TEXT26}"]',
+        '<p class="chat-a Button">
                     <strong>{TEXT26}:</strong> {TEXT27}
                 </p>'
     );
     $config->BBCodes->addCustom(
-            '[chat-b="{TEXT29}" who="{TEXT28}"]',
-            '<p class="chat-b Button--primary">
+        '[chat-b="{TEXT29}" who="{TEXT28}"]',
+        '<p class="chat-b Button--primary">
                     <strong>{TEXT28}:</strong> <span class="chat-b-normal">{TEXT29}</span>
                 </p>'
     );
     $config->BBCodes->addCustom(
-            '[space]',
-            '<p class="space"></p>'
+        '[space]',
+        '<p class="space"></p>'
     );
 }
 
 function font(Configurator $config)
 {
     $config->BBCodes->addCustom(
-            '[red]{TEXT30}[/red]',
-            '<span class="bbred">{TEXT30}</span>'
+        '[red]{TEXT30}[/red]',
+        '<span class="bbred">{TEXT30}</span>'
     );
     $config->BBCodes->addCustom(
-            '[orange]{TEXT31}[/orange]',
-            '<span class="bborange">{TEXT31}</span>'
+        '[orange]{TEXT31}[/orange]',
+        '<span class="bborange">{TEXT31}</span>'
     );
     $config->BBCodes->addCustom(
-            '[yellow]{TEXT32}[/yellow]',
-            '<span class="bbyellow">{TEXT32}</span>'
+        '[yellow]{TEXT32}[/yellow]',
+        '<span class="bbyellow">{TEXT32}</span>'
     );
     $config->BBCodes->addCustom(
-            '[green]{TEXT33}[/green]',
-            '<span class="bbgreen">{TEXT33}</span>'
+        '[green]{TEXT33}[/green]',
+        '<span class="bbgreen">{TEXT33}</span>'
     );
     $config->BBCodes->addCustom(
-            '[blue]{TEXT34}[/blue]',
-            '<span class="bbblue">{TEXT34}</span>'
+        '[blue]{TEXT34}[/blue]',
+        '<span class="bbblue">{TEXT34}</span>'
     );
     $config->BBCodes->addCustom(
-            '[purple]{TEXT35}[/purple]',
-            '<span class="bbpurple">{TEXT35}</span>'
+        '[purple]{TEXT35}[/purple]',
+        '<span class="bbpurple">{TEXT35}</span>'
     );
     $config->BBCodes->addCustom(
-            '[hl]{TEXT36}[/hl]',
-            '<span class="bbhighlight">{TEXT36}</span>'
+        '[hl]{TEXT36}[/hl]',
+        '<span class="bbhighlight">{TEXT36}</span>'
     );
     $config->BBCodes->addCustom(
-            '[kbd]{TEXT37}[/kbd]',
-            '<kbd>{TEXT37}</kbd>'
+        '[kbd]{TEXT37}[/kbd]',
+        '<kbd>{TEXT37}</kbd>'
     );
     $config->BBCodes->addFromRepository('BACKGROUND');
     $config->BBCodes->addFromRepository('FONT');
@@ -112,8 +112,8 @@ function font(Configurator $config)
 function pop(Configurator $config)
 {
     $config->BBCodes->addCustom(
-            '[pop button="{TEXT8}" title="{ANYTHING}" content="{ANYTHING1}"]',
-            '<div id="popmain">
+        '[pop button="{TEXT8}" title="{ANYTHING}" content="{ANYTHING1}"]',
+        '<div id="popmain">
                                   <a href="#popmodal-{ANYTHING}{ANYTHING1}" class="popbtn Button Button--primary">{TEXT8}</a>
                               </div>
                                   <div id="popmodal-{ANYTHING}{ANYTHING1}">
@@ -131,8 +131,8 @@ function pop(Configurator $config)
 function spoiler(Configurator $config)
 {
     $config->BBCodes->addCustom(
-            '[spoiler={ANYTHING2;optional;defaultValue=Read More}]{ANYTHING3}[/spoiler]',
-            '<details>
+        '[spoiler={ANYTHING2;optional;defaultValue=Read More}]{ANYTHING3}[/spoiler]',
+        '<details>
                               <summary>{ANYTHING2}</summary>
                               <p>{ANYTHING3}</p>
                               </details>'
@@ -142,34 +142,35 @@ function spoiler(Configurator $config)
 function tooltip(Configurator $config)
 {
     $config->BBCodes->addCustom(
-            '[tooltip="{TEXT1}" placement="{TEXT2}"]{TEXT3}[/tooltip]',
-            '<span class="bb-tooltip" data-tooltip="{TEXT1}" data-placement="{TEXT2}">{TEXT3}</span>'
+        '[tooltip="{TEXT1}" placement="{TEXT2}"]{TEXT3}[/tooltip]',
+        '<span class="bb-tooltip" data-tooltip="{TEXT1}" data-placement="{TEXT2}">{TEXT3}</span>'
     );
 }
 
 return [
-        (new Extend\Frontend('forum'))
-                ->content(function (Document $document) {
-                    $document->head[] = '<link rel="stylesheet" type="text/css" href="/assets/extensions/cadiducho-bbcode/css/styles.css">';
-                    $document->head[] = '<script src="/assets/extensions/cadiducho-bbcode/js/spoiler.js"></script>';
-                }),
-        (new Extend\Formatter)
-                ->configure(function (Configurator $config) {
-                    $config->BBCodes->addFromRepository('TABLE');
-                    $config->BBCodes->addFromRepository('TBODY');
-                    $config->BBCodes->addFromRepository('TD');
-                    $config->BBCodes->addFromRepository('TH');
-                    $config->BBCodes->addFromRepository('TR');
-                    $config->BBCodes->addFromRepository('THEAD');
-                    $config->BBCodes->addFromRepository('HR');
-                    $config->BBCodes->addFromRepository('FLOAT');
+    new AddFofComponents(),
 
-                    accordion($config);
-                    blur($config);
-                    chat($config);
-                    font($config);
-                    pop($config);
-                    spoiler($config);
-                    tooltip($config);
-                })
+    (new Extend\Frontend('forum'))
+        ->js(__DIR__.'/js/dist/forum.js')
+        ->css(__DIR__.'/resources/less/forum.less'),
+
+    (new Extend\Formatter())
+        ->configure(function (Configurator $config) {
+            $config->BBCodes->addFromRepository('TABLE');
+            $config->BBCodes->addFromRepository('TBODY');
+            $config->BBCodes->addFromRepository('TD');
+            $config->BBCodes->addFromRepository('TH');
+            $config->BBCodes->addFromRepository('TR');
+            $config->BBCodes->addFromRepository('THEAD');
+            $config->BBCodes->addFromRepository('HR');
+            $config->BBCodes->addFromRepository('FLOAT');
+
+            accordion($config);
+            blur($config);
+            chat($config);
+            font($config);
+            pop($config);
+            spoiler($config);
+            tooltip($config);
+        }),
 ];
