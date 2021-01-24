@@ -31,10 +31,11 @@
   "extra": {
     "flarum-extension": {
       "title": "Edoras Formatting - BBCode",
+      "category": "formatting",
       "icon": {
         "name": "fas fa-font",
-        "backgroundColor": "#dedede",
-        "color": "#000"
+        "backgroundColor": "#009688",
+        "color": "#4D698E"
       }
     }
   }
