@@ -3,7 +3,7 @@
 /*
  * This file is part of cadiducho/bbcode.
  *
- * Copyright (c) 2020 Cadiducho.
+ * Copyright (c) 2021 Cadiducho.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -12,7 +12,6 @@
 namespace Cadiducho\BBCode;
 
 use Flarum\Extend;
-use FoF\Components\Extend\AddFofComponents;
 use s9e\TextFormatter\Configurator;
 
 function accordion(Configurator $config)
@@ -148,7 +147,6 @@ function tooltip(Configurator $config)
 }
 
 return [
-    new AddFofComponents(),
 
     (new Extend\Frontend('forum'))
         ->js(__DIR__.'/js/dist/forum.js')

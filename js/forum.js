@@ -1,7 +1,6 @@
 import 'details-polyfill';
 
-app.initializers.add('edoras-bbcode', function(app) {
-
+app.initializers.add('edoras-bbcode', function (app) {
     /* Related to https://github.com/EdorasMinecraft/BBcode/issues/1 Disabled at the moment
     extend(MarkdownToolbar.prototype, 'items', function(items) {
         items.add('morebbcode', (
