@@ -13,23 +13,22 @@ namespace Cadiducho\BBCode;
 
 use Flarum\Extend;
 use s9e\TextFormatter\Configurator;
+use Flarum\Locale\Translator;
 
 function accordion(Configurator $config)
 {
     $config->BBCodes->addCustom(
         '[accordion header="{TEXT4}"]{TEXT5}[/accordion]',
         '<div class="accordion">
-                                 <input type="checkbox" name="radacc" class="accordion-chk" />
-                                 <h3 class="accordion-header Button--primary">
-                                     {TEXT4}
-                                 <span class="acc-icon"><i class="fas fa-chevron-circle-down"></i></span>
-                                 </h3>
-                                 <div class="accordion-content Button">
-                                     <p>
-                                     {TEXT5}
-                                     </p>
-                                 </div>
-                             </div>'
+                    <input type="checkbox" name="radacc" class="accordion-chk" />
+                    <h3 class="accordion-header Button--primary">
+                        {TEXT4}
+                        <span class="acc-icon"><i class="fas fa-chevron-circle-down"></i></span>
+                    </h3>
+                    <div class="accordion-content Button">
+                        <p>{TEXT5}</p>
+                    </div>
+                  </div>'
     );
 }
 
@@ -38,8 +37,8 @@ function blur(Configurator $config)
     $config->BBCodes->addCustom(
         '[blur]{ANYTHING4}[/blur]',
         '<p class="bbspoiler-blur">
-                            {ANYTHING4}
-                            </p>'
+                    {ANYTHING4}
+                 </p>'
     );
 }
 
@@ -129,12 +128,13 @@ function pop(Configurator $config)
 
 function spoiler(Configurator $config)
 {
+    $translator = resolve(Translator::class);
     $config->BBCodes->addCustom(
-        '[spoiler={ANYTHING2;optional;defaultValue=Read More}]{ANYTHING3}[/spoiler]',
+        '[spoiler={ANYTHING2;optional;defaultValue=' . $translator->trans('edoras-formatting.spoiler.defaultValue') . '}]{ANYTHING3}[/spoiler]',
         '<details>
-                              <summary>{ANYTHING2}</summary>
-                              <p>{ANYTHING3}</p>
-                              </details>'
+                    <summary><i class="fas fa-chevron-down"></i> {ANYTHING2}</summary>
+                    <p>{ANYTHING3}</p>
+                 </details>'
     );
 }
 
@@ -151,6 +151,8 @@ return [
     (new Extend\Frontend('forum'))
         ->js(__DIR__.'/js/dist/forum.js')
         ->css(__DIR__.'/resources/less/forum.less'),
+
+    new Extend\Locales(__DIR__.'/resources/locale'),
 
     (new Extend\Formatter())
         ->configure(function (Configurator $config) {
