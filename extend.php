@@ -130,7 +130,7 @@ function spoiler(Configurator $config)
 {
     $translator = resolve(Translator::class);
     $config->BBCodes->addCustom(
-        '[spoiler={ANYTHING2;optional;defaultValue=' . $translator->trans('edoras-formatting.spoiler.defaultValue') . '}]{ANYTHING3}[/spoiler]',
+        '[summary={ANYTHING2;optional;defaultValue=' . $translator->trans('edoras-formatting.spoiler.defaultValue') . '}]{ANYTHING3}[/summary]',
         '<details>
                     <summary><i class="fas fa-chevron-down"></i> {ANYTHING2}</summary>
                     <p>{ANYTHING3}</p>
