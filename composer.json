@@ -1,5 +1,5 @@
 {
-  "name": "cadiducho/bbcode",
+  "name": "imshuzai/bbcode",
   "description": "Edoras Formatting - BBCodes",
   "keywords": [
     "flarum"
@@ -10,15 +10,14 @@
     "flarum/core": "^1.0"
   },
   "support": {
-    "issues": "https://github.com/EdorasMinecraft/BBcode/issues",
-    "source": "https://github.com/EdorasMinecraft/BBcode",
+    "issues": "https://github.com/imshuzai/BBcode/issues",
+    "source": "https://github.com/imshuzai/BBcode",
     "forum": "https://foro.edoras.es"
   },
   "homepage": "https://edoras.es",
   "authors": [
     {
       "name": "Cadiducho",
-      "email": "cadiducho@gmail.com",
       "role": "Developer"
     }
   ],
