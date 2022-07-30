@@ -57,7 +57,7 @@ function chat(Configurator $config)
                 </p>'
     );
     $config->BBCodes->addCustom(
-        '[space]',
+        '[spp]',
         '<p class="space"></p>'
     );
 }
@@ -130,7 +130,7 @@ function spoiler(Configurator $config)
 {
     $translator = resolve(Translator::class);
     $config->BBCodes->addCustom(
-        '[summary={ANYTHING2;optional;defaultValue=' . $translator->trans('edoras-formatting.spoiler.defaultValue') . '}]{ANYTHING3}[/summary]',
+        '[detail={ANYTHING2;optional;defaultValue=' . $translator->trans('edoras-formatting.spoiler.defaultValue') . '}]{ANYTHING3}[/detail]',
         '<details>
                     <summary><i class="fas fa-chevron-down"></i> {ANYTHING2}</summary>
                     <p>{ANYTHING3}</p>
